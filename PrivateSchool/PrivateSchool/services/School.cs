@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PrivateSchool.domain;
+using PrivateSchool.domain.Assigments;
+
 namespace PrivateSchool.services
 {
     class School
@@ -39,6 +41,15 @@ namespace PrivateSchool.services
             get { return _noOfTrainers; }
             set { _noOfTrainers = value; }
         }
+
+        private AssigmentDetails _assigmentDetails;
+
+        public AssigmentDetails AssigmentDetails
+        {
+            get { return _assigmentDetails; }
+            set { _assigmentDetails = value; }
+        }
+
         /*
          * School Constrcuctors Start Point
          */
@@ -53,6 +64,12 @@ namespace PrivateSchool.services
             TrainerDetails = trainerDetails;
             NoOfTrainers = noOfTrainers;
         }
+
+        public School(AssigmentDetails assigmentDetails)
+        {
+            _assigmentDetails = assigmentDetails;
+        }
+        
 
         /*
          * School Constrcuctors End Point
@@ -84,6 +101,18 @@ namespace PrivateSchool.services
             foreach (RandomTrainer trainer in trainerService.Trainers)
             {
                 Console.WriteLine(trainer);
+            }
+        }
+
+        public void StartAssigments()
+        {
+            Console.WriteLine("------------------------------------List With Assigments ------------------------------------------");
+
+            AssigmentService assigmentService = new AssigmentService(_assigmentDetails);
+
+            foreach(RandomAssigment assigment in assigmentService.Assigments)
+            {
+                Console.WriteLine(assigment);
             }
         }
     }

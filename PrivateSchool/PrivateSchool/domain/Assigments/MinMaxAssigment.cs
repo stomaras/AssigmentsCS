@@ -27,7 +27,7 @@ namespace PrivateSchool.domain
         public MinMaxAssigment(int min, int max)
         {
             Min = 1;
-            Max = 7;
+            Max = 200;
         }
 
         public override string ToString()
