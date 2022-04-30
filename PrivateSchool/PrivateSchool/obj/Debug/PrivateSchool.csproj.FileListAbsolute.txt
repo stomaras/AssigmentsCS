@@ -26,3 +26,10 @@ C:\Users\spyros\AssigmentsCS\PrivateSchool\PrivateSchool\obj\Debug\PrivateSchool
 C:\Users\spyros\AssigmentsCS\PrivateSchool\PrivateSchool\obj\Debug\PrivateSchool.csproj.CoreCompileInputs.cache
 C:\Users\spyros\AssigmentsCS\PrivateSchool\PrivateSchool\obj\Debug\PrivateSchool.exe
 C:\Users\spyros\AssigmentsCS\PrivateSchool\PrivateSchool\obj\Debug\PrivateSchool.pdb
+C:\Users\spyros\testPrivateSchool\AssigmentsCS\PrivateSchool\PrivateSchool\bin\Debug\PrivateSchool.exe.config
+C:\Users\spyros\testPrivateSchool\AssigmentsCS\PrivateSchool\PrivateSchool\bin\Debug\PrivateSchool.exe
+C:\Users\spyros\testPrivateSchool\AssigmentsCS\PrivateSchool\PrivateSchool\bin\Debug\PrivateSchool.pdb
+C:\Users\spyros\testPrivateSchool\AssigmentsCS\PrivateSchool\PrivateSchool\obj\Debug\PrivateSchool.csproj.AssemblyReference.cache
+C:\Users\spyros\testPrivateSchool\AssigmentsCS\PrivateSchool\PrivateSchool\obj\Debug\PrivateSchool.csproj.CoreCompileInputs.cache
+C:\Users\spyros\testPrivateSchool\AssigmentsCS\PrivateSchool\PrivateSchool\obj\Debug\PrivateSchool.exe
+C:\Users\spyros\testPrivateSchool\AssigmentsCS\PrivateSchool\PrivateSchool\obj\Debug\PrivateSchool.pdb

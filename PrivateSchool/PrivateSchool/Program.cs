@@ -37,7 +37,7 @@ namespace PrivateSchool
 
             //Console.WriteLine(random.ToString());
 
-            CSVDataInputService csvDataInputService = new CSVDataInputService(@"C:\Users\spyros\C-\Assigments\Individual_Project_Part_A\PrivateSchool\PrivateSchool\SchoolData.csv");
+            CSVDataInputService csvDataInputService = new CSVDataInputService(@"C:\Users\spyros\testPrivateSchool\AssigmentsCS\PrivateSchool\PrivateSchool\SchoolData.csv");
             StudentDetails studentDetails = csvDataInputService.StudentDetails;
             int noOfStudents = csvDataInputService.NoOfStudents;
             School school = new School(studentDetails, noOfStudents);
@@ -88,8 +88,8 @@ namespace PrivateSchool
             RandomAssigment assigment = new RandomAssigment(assigmentDetails);
             Console.WriteLine(assigment.ToString());
 
-            School school = new School(assigmentDetails);
-            school.StartAssigments();
+            School school3 = new School(assigmentDetails);
+            school3.StartAssigments();
             
 
 
