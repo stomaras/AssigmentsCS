@@ -37,13 +37,13 @@ namespace PrivateSchool
 
             //Console.WriteLine(random.ToString());
 
-            //CSVDataInputService csvDataInputService = new CSVDataInputService(@"C:\Users\spyros\C-\Assigments\Individual_Project_Part_A\PrivateSchool\PrivateSchool\SchoolData.csv");
-            //StudentDetails studentDetails = csvDataInputService.StudentDetails;
-            //int noOfStudents = csvDataInputService.NoOfStudents;
-            //School school = new School(studentDetails, noOfStudents);
-            //school.Start();
+            CSVDataInputService csvDataInputService = new CSVDataInputService(@"C:\Users\spyros\C-\Assigments\Individual_Project_Part_A\PrivateSchool\PrivateSchool\SchoolData.csv");
+            StudentDetails studentDetails = csvDataInputService.StudentDetails;
+            int noOfStudents = csvDataInputService.NoOfStudents;
+            School school = new School(studentDetails, noOfStudents);
+            school.Start();
 
-            
+
             //string[] courses = { "java", "python", "csharp", "javascript" };
 
 
@@ -55,19 +55,19 @@ namespace PrivateSchool
 
             // List With Trainers 1st Way
 
-            //MinMax Id = new MinMax(1, 20);
-            //NameMinMax FirstName = new NameMinMax(65, 91, 4);
-            //NameMinMax LastName = new NameMinMax(65, 91, 7);
-            //Subject subject = new Subject();
-            //TrainerDetails trainerDetails = new TrainerDetails(Id, FirstName, LastName, subject);
-            //RandomTrainer trainer = new RandomTrainer(trainerDetails);
-            //int noOfTrainers = 10;
-            //School school1 = new School(trainerDetails, noOfTrainers);
-            //school1.StartTrainers();
+            MinMax Id = new MinMax(1, 20);
+            NameMinMax FirstName = new NameMinMax(65, 91, 4);
+            NameMinMax LastName = new NameMinMax(65, 91, 7);
+            Subject subject = new Subject();
+            TrainerDetails trainerDetails = new TrainerDetails(Id, FirstName, LastName, subject);
+            RandomTrainer trainer = new RandomTrainer(trainerDetails);
+            int noOfTrainers = 10;
+            School school1 = new School(trainerDetails, noOfTrainers);
+            school1.StartTrainers();
 
             //Console.WriteLine("Assigments");
-            
-            
+
+
 
 
             /*
