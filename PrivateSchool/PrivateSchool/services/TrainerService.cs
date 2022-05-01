@@ -20,7 +20,7 @@ namespace PrivateSchool.services
             set { _numOfTrainers = value; }
         }
 
-        private List<Trainer> _trainers;
+        //private List<Trainer> _trainers;
 
         public List<Trainer> Trainers { get; private set; }
 

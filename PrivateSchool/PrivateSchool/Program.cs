@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PrivateSchool.domain;
 using PrivateSchool.services;
 using PrivateSchool.domain.Assigments;
+using PrivateSchool.domain.Course;
 namespace PrivateSchool
 {
     class Program
@@ -42,6 +43,7 @@ namespace PrivateSchool
             int noOfStudents = csvDataInputService.NoOfStudents;
             School school = new School(studentDetails, noOfStudents);
             school.Start();
+            //TrainerDetails trainerDetails = csvDataInputService.TrainerDetails;
 
 
             //string[] courses = { "java", "python", "csharp", "javascript" };
@@ -65,6 +67,9 @@ namespace PrivateSchool
             School school1 = new School(trainerDetails, noOfTrainers);
             school1.StartTrainers();
 
+            //CSVDataInputService csvDataInputService = new CSVDataInputService(@"c:\users\spyros\assigmentscs\privateschool\privateschool\schooldata.csv");
+
+
             //Console.WriteLine("Assigments");
 
 
@@ -86,10 +91,21 @@ namespace PrivateSchool
             
 
             RandomAssigment assigment = new RandomAssigment(assigmentDetails);
-            Console.WriteLine(assigment.ToString());
+           
 
             School school3 = new School(assigmentDetails);
             school3.StartAssigments();
+
+            CourseMinMax courseMinMax = new CourseMinMax(1,100);
+            CourseTitle courseTitle = new CourseTitle();
+            StreamTypes streamTypes = new StreamTypes(1,180);
+            CourseType courseType = new CourseType();
+            StartDateTime startDateTime = new StartDateTime(3, 29);
+            EndDateTime endDateTime = new EndDateTime(5, 222);
+            Console.WriteLine(startDateTime.ToString());
+            CourseDetails courseDetails = new CourseDetails(courseMinMax, courseTitle, streamTypes, courseType, startDateTime, endDateTime);
+            RandomCourse randomCourse = new RandomCourse(courseDetails);
+            Console.WriteLine(randomCourse.ToString());
             
 
 

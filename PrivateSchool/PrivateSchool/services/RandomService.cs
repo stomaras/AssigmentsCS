@@ -40,7 +40,31 @@ namespace PrivateSchool.services
             int rand_index = _rand.Next(0, courses.Length);
             result = courses[rand_index];
             return result;
-            
+        }
+
+        public static string Type(List<string> types)
+        {
+            string result = "";
+            int rand_index = _rand.Next(0, types.Count);
+            result = types[rand_index];
+            return result;
+
+        }
+
+        public static string Course(List<string> courses)
+        {
+            string result = "";
+            int rand_index = _rand.Next(0, courses.Count);
+            result = courses[rand_index];
+            return result;
+        }
+
+        public static string Stream(List<string> streams)
+        {
+            string result = $"";
+            int rand_index = _rand.Next(0, streams.Count);
+            result = streams[rand_index];
+            return result;
         }
 
         public static DateTime RandomSubmissionDateTime(int minMonth, int maxMonth, int minDay, int maxDay)
@@ -59,6 +83,8 @@ namespace PrivateSchool.services
             int randomIndex = Number(0, assigmentsNames.Count);
             return assigmentsNames[randomIndex];
         }
+
+        
         
         public static string Name(int min, int max, int noOfChars)
         {

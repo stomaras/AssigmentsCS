@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PrivateSchool.domain;
 using PrivateSchool.domain.Assigments;
+using PrivateSchool.domain.Course;
 
 namespace PrivateSchool.services
 {
@@ -65,10 +66,20 @@ namespace PrivateSchool.services
             NoOfTrainers = noOfTrainers;
         }
 
+        public School(TrainerDetails trainerDetails, int noOfTrainers, StudentDetails studentDetails, int noOfStudents)
+        {
+            TrainerDetails = trainerDetails;
+            StudentDetails = studentDetails;
+            NoOfStudents = noOfStudents;
+            NoOfTrainers = noOfTrainers;
+        }
+
         public School(AssigmentDetails assigmentDetails)
         {
             _assigmentDetails = assigmentDetails;
         }
+
+        public School(CourseDetails )
         
 
         /*

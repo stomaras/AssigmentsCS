@@ -30,6 +30,24 @@ namespace PrivateSchool.services
             set { _noOfStudents = value; }
         }
 
+        private int _noOfTrainers;
+
+        public int NoOfTrainers
+        {
+            get { return _noOfTrainers; }
+            set { _noOfTrainers = value; }
+        }
+
+        private TrainerDetails _trainerDetails;
+
+        public TrainerDetails TrainerDetails
+        {
+            get { return _trainerDetails; }
+            set { _trainerDetails = value; }
+        }
+
+
+
 
 
         public CSVDataInputService(string filename)
@@ -44,10 +62,15 @@ namespace PrivateSchool.services
                 NameMinMax firstName;
                 NameMinMax lastName;
                 DateBirth dateBirth;
+
+                MinMax tid;
+                NameMinMax trainerFirstName;
+                NameMinMax trainerLastName;
+                Subject subject;
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
-                    if (counter > 0)
+                    if (counter > 0 && counter == 1)
                     {
                         var values = line.Split(';');
                         NoOfStudents = Convert.ToInt32(values[0]);
@@ -58,11 +81,26 @@ namespace PrivateSchool.services
                         dateBirth = new DateBirth(Convert.ToInt32(values[11]), Convert.ToInt32(values[12]), Convert.ToInt32(values[13]), Convert.ToInt32(values[14]), Convert.ToInt32(values[15]), Convert.ToInt32(values[16]));
                         StudentDetails = new StudentDetails(sid, firstName, lastName, dateBirth, tuitionFees);
                     }
+                    if(counter > 2 && counter == 3)
+                    {
+                        Console.WriteLine("ddddddddddddd");
+                        var trainerValues = line.Split(';');
+                        NoOfTrainers = Convert.ToInt32(trainerValues[0]);
+                        Console.WriteLine(NoOfTrainers);
+                        tid = new MinMax(Convert.ToInt32(trainerValues[1]), Convert.ToInt32(trainerValues[2]));
+                        trainerFirstName = new NameMinMax(Convert.ToInt32(trainerValues[3]), Convert.ToInt32(trainerValues[4]), Convert.ToInt32(trainerValues[5]));
+                        trainerLastName = new NameMinMax(Convert.ToInt32(trainerValues[6]), Convert.ToInt32(trainerValues[7]), Convert.ToInt32(trainerValues[8]));
+                        subject = new Subject();
+                        TrainerDetails = new TrainerDetails(tid, trainerFirstName, trainerLastName, subject);
+                        Console.WriteLine(TrainerDetails.ToString());
+                    }
                     counter++;
                 }
             }
             Console.WriteLine(NoOfStudents);
             Console.WriteLine(StudentDetails);
         }
+
+        
     }
 }
