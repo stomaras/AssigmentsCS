@@ -30,6 +30,7 @@ namespace PrivateSchool.domain.Course
 
         public StreamTypes(int min, int max)
         {
+            
             min = 1;
             max = 180;
             Min = min;

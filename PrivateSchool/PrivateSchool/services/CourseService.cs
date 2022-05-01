@@ -33,7 +33,7 @@ namespace PrivateSchool.services
             var course = new RandomCourse(_courseDetails);
             courses.Add(course);
 
-            for(int i=0; i<= _noOfCourses -1; i++)
+            for(int i=0; i<= 8; i++)
             {
                 course = new RandomCourse(_courseDetails, GenerateUniqueId(GetCoursesIds(courses)));
                 courses.Add(course);

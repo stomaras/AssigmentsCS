@@ -51,21 +51,7 @@ namespace PrivateSchool.services
             set { _assigmentDetails = value; }
         }
 
-        private CourseDetails _courseDetails;
-
-        public CourseDetails CourseDetails
-        {
-            get { return _courseDetails; }
-            set { _courseDetails = value; }
-        }
-
-        private int _noOfCourses;
-
-        public int NoOfCourses
-        {
-            get { return _noOfCourses; }
-            set { _noOfCourses = value; }
-        }
+       
 
 
 
@@ -97,6 +83,31 @@ namespace PrivateSchool.services
             _assigmentDetails = assigmentDetails;
         }
 
+
+
+
+
+
+
+
+
+
+
+        private CourseDetails _courseDetails;
+
+        public CourseDetails CourseDetails
+        {
+            get { return _courseDetails; }
+            set { _courseDetails = value; }
+        }
+
+        private int _noOfCourses;
+
+        public int NoOfCourses
+        {
+            get { return _noOfCourses; }
+            set { _noOfCourses = value; }
+        }
         public School(CourseDetails courseDetails, int numOfCourses)
         {
             CourseDetails = courseDetails;
@@ -164,10 +175,11 @@ namespace PrivateSchool.services
             Console.WriteLine("---------------------------------------- List With Courses -------------------------------------------");
 
             CourseService courseService = new CourseService(_courseDetails, NoOfCourses);
-
+            
             foreach(RandomCourse course in courseService.Courses)
             {
                 Console.WriteLine(course);
+
             }
         }
     }

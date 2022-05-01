@@ -1,4 +1,2 @@
 ﻿noOfStudents;IdMin;IdMax;tuitionFeeMin;tuitionFeeMax;firstNameMin;firstNameMax;firstNameLength;lastNameMin;lastNameMax;lastNameLength;yearInCalendarMin;yearInCalendarMax;monthMin;monthMax;dayMin;dayMax
 5;1;1000;1000.00;2500.00;65;91;4;65;91;8;1960;2004;1;11;1;30
-noOfTrainers;IdMin;IdMax;firstNameMin;firstNameMax;firstNameLength;lastNameMin;lastNameMax;lastNameLength;
-10;1;10;65;91;4;65;91;7

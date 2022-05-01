@@ -39,10 +39,19 @@ namespace PrivateSchool
             //Console.WriteLine(random.ToString());
 
             CSVDataInputService csvDataInputService = new CSVDataInputService(@"C:\Users\spyros\testPrivateSchool\AssigmentsCS\PrivateSchool\PrivateSchool\SchoolData.csv");
+            
             StudentDetails studentDetails = csvDataInputService.StudentDetails;
             int noOfStudents = csvDataInputService.NoOfStudents;
             School school = new School(studentDetails, noOfStudents);
             school.Start();
+
+            CSVDataInputServiceCourse csvDataInputServiceCourse = new CSVDataInputServiceCourse(@"C:\Users\spyros\AssigmentsCS\PrivateSchool\PrivateSchool\CourseData.csv");
+            CourseDetails courseDetails1 = csvDataInputServiceCourse.CourseDetails;
+            
+            int noOfCourses = csvDataInputServiceCourse.NumOfCourses;
+            Console.WriteLine(noOfCourses);
+            School school4 = new School(courseDetails1, noOfCourses);
+            school4.StartCourses();
             //TrainerDetails trainerDetails = csvDataInputService.TrainerDetails;
 
 
@@ -95,6 +104,7 @@ namespace PrivateSchool
 
             School school3 = new School(assigmentDetails);
             school3.StartAssigments();
+
 
             CourseMinMax courseMinMax = new CourseMinMax(300,1);
             CourseTitle courseTitle = new CourseTitle();

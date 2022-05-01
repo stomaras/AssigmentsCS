@@ -95,6 +95,7 @@
     <Compile Include="services\AssigmentService.cs" />
     <Compile Include="services\CourseService.cs" />
     <Compile Include="services\CSVDataInputService.cs" />
+    <Compile Include="services\CSVDataInputServiceCourse.cs" />
     <Compile Include="services\School.cs" />
     <Compile Include="services\RandomService.cs" />
     <Compile Include="services\StudentService.cs" />
