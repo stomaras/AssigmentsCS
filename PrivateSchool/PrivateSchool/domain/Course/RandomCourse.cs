@@ -29,6 +29,18 @@ namespace PrivateSchool.domain.Course
             EndDate = new DateTime(DateTime.Now.Year, _courseDetails.EndDateTime.EndMonth, _courseDetails.EndDateTime.EndDay);
         }
 
+        public RandomCourse(CourseDetails courseDetails, int id)
+        {
+            _courseDetails = courseDetails;
+            Cid = id;
+            Title = RandomService.Course(_courseDetails.CourseTitle.Courses);
+            StreamType = RandomService.Stream(_courseDetails.StreamTypes.Streams);
+            Type = RandomService.Type(_courseDetails.CourseType.Courses);
+            StartDate = new DateTime(DateTime.Now.Year, _courseDetails.StartDateTime.StartMonth, _courseDetails.StartDateTime.StartDay);
+            EndDate = new DateTime(DateTime.Now.Year, _courseDetails.EndDateTime.EndMonth, _courseDetails.EndDateTime.EndDay);
+        }
+
+
 
 
         public override string ToString()

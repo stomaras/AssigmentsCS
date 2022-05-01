@@ -33,14 +33,30 @@ namespace PrivateSchool.services
             var course = new RandomCourse(_courseDetails);
             courses.Add(course);
 
-            for(int i=0; i<= _noOfCourses; i++)
+            for(int i=0; i<= _noOfCourses -1; i++)
             {
-                course = new RandomCourse(_courseDetails);
+                course = new RandomCourse(_courseDetails, GenerateUniqueId(GetCoursesIds(courses)));
                 courses.Add(course);
                 
             }
 
             return courses;
+        }
+
+        private List<int> GetCoursesIds(List<Course> courses)
+        {
+            List<int> ids = new List<int>(courses.Select(course => course.Cid));
+            return ids;
+        }
+
+        private int GenerateUniqueId(List<int> ids)
+        {
+            var newId = RandomService.Number(_courseDetails.CourseMinMax.Min, _courseDetails.CourseMinMax.Max);
+            while (ids.Contains(newId))
+            {
+                newId = RandomService.Number(_courseDetails.CourseMinMax.Min, _courseDetails.CourseMinMax.Max);
+            }
+            return newId;
         }
 
 

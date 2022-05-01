@@ -96,7 +96,7 @@ namespace PrivateSchool
             School school3 = new School(assigmentDetails);
             school3.StartAssigments();
 
-            CourseMinMax courseMinMax = new CourseMinMax(100,1);
+            CourseMinMax courseMinMax = new CourseMinMax(300,1);
             CourseTitle courseTitle = new CourseTitle();
             StreamTypes streamTypes = new StreamTypes(1,180);
             CourseType courseType = new CourseType();
