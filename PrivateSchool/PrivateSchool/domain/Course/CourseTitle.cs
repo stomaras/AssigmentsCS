@@ -28,10 +28,10 @@ namespace PrivateSchool.domain.Course
 
         public override string ToString()
         {
-            string s = $"";
-            for(int i=0; i<= Courses.Count; i++)
+            string s = $"Course Title";
+            for(int i=0; i<= Courses.Count-1; i++)
             {
-                s = s + $"{Courses[i]}";
+                s = s + $" \nAvailable Course : {Courses[i]}";
             }
             return s;
         }

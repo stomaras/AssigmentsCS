@@ -51,6 +51,24 @@ namespace PrivateSchool.services
             set { _assigmentDetails = value; }
         }
 
+        private CourseDetails _courseDetails;
+
+        public CourseDetails CourseDetails
+        {
+            get { return _courseDetails; }
+            set { _courseDetails = value; }
+        }
+
+        private int _noOfCourses;
+
+        public int NoOfCourses
+        {
+            get { return _noOfCourses; }
+            set { _noOfCourses = value; }
+        }
+
+
+
         /*
          * School Constrcuctors Start Point
          */
@@ -79,7 +97,12 @@ namespace PrivateSchool.services
             _assigmentDetails = assigmentDetails;
         }
 
-        public School(CourseDetails )
+        public School(CourseDetails courseDetails, int numOfCourses)
+        {
+            CourseDetails = courseDetails;
+            NoOfCourses = numOfCourses;
+
+        }
         
 
         /*
@@ -99,6 +122,15 @@ namespace PrivateSchool.services
             {
                 Console.WriteLine(student);
             }
+
+            //Console.WriteLine("------------------- List With Courses --------------------------------------");
+
+            //CourseService courseService = new CourseService(_courseDetails, _noOfCourses);
+
+            //foreach(RandomCourse course in courseService.Courses)
+            //{
+            //    Console.WriteLine(course);
+            //}
 
             
         }
@@ -124,6 +156,18 @@ namespace PrivateSchool.services
             foreach(RandomAssigment assigment in assigmentService.Assigments)
             {
                 Console.WriteLine(assigment);
+            }
+        }
+
+        public void StartCourses()
+        {
+            Console.WriteLine("---------------------------------------- List With Courses -------------------------------------------");
+
+            CourseService courseService = new CourseService(_courseDetails, NoOfCourses);
+
+            foreach(RandomCourse course in courseService.Courses)
+            {
+                Console.WriteLine(course);
             }
         }
     }

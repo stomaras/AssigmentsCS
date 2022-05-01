@@ -67,5 +67,11 @@ namespace PrivateSchool.domain.Course
             EndDateTime = endDateTime;
         }
 
+
+        public override string ToString()
+        {
+            string s = $"CourseDetails {{\n CourseMinMax: min id{CourseMinMax.Min}, max id{CourseMinMax.Max},\n CourseTitle {CourseTitle.ToString()},\n StreamTypes {StreamTypes.ToString()},\n Type {CourseType.ToString()},\n Start Date {StartDateTime.ToString()},\n End Date {EndDateTime.ToString()}}}";
+            return s;
+        }
     }
 }

@@ -26,6 +26,11 @@ namespace PrivateSchool.domain.Course
 
         public CourseMinMax(int min, int max)
         {
+            if(min < 0 || min > max || max < 0)
+            {
+                min = 1;
+                max = 200;
+            }
             Min = min;
             Max = max;
         }

@@ -55,7 +55,15 @@ namespace PrivateSchool.domain.Course
 
         public override string ToString()
         {
-            return $"StreamTypes {{ Min : {Min}, Max : {Max}, Stream Types :{Streams} }}";
+            string s = $"StreamType {{";
+            s = s + $" min {Min}, max {Max}\n";
+            for(int i = Min; i<= Max-1; i++)
+            {
+                s = s + $"\t{Streams[i]}";
+            }
+            s = s + $"}}";
+            return s;
+            
         }
 
     }

@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="CourseData.csv" />
     <None Include="SchoolData.csv" />
   </ItemGroup>
   <ItemGroup>

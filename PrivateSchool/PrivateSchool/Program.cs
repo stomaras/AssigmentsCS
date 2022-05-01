@@ -96,16 +96,19 @@ namespace PrivateSchool
             School school3 = new School(assigmentDetails);
             school3.StartAssigments();
 
-            CourseMinMax courseMinMax = new CourseMinMax(1,100);
+            CourseMinMax courseMinMax = new CourseMinMax(100,1);
             CourseTitle courseTitle = new CourseTitle();
             StreamTypes streamTypes = new StreamTypes(1,180);
             CourseType courseType = new CourseType();
             StartDateTime startDateTime = new StartDateTime(3, 29);
             EndDateTime endDateTime = new EndDateTime(5, 222);
-            Console.WriteLine(startDateTime.ToString());
             CourseDetails courseDetails = new CourseDetails(courseMinMax, courseTitle, streamTypes, courseType, startDateTime, endDateTime);
             RandomCourse randomCourse = new RandomCourse(courseDetails);
             Console.WriteLine(randomCourse.ToString());
+            int numOfCourses = -2;
+            School school2 = new School(courseDetails, numOfCourses);
+            school2.StartCourses();
+           
             
 
 
