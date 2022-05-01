@@ -101,6 +101,7 @@
     <Compile Include="services\StudentService.cs" />
     <Compile Include="services\StudentDataInputService.cs" />
     <Compile Include="services\TrainerService.cs" />
+    <Compile Include="services\UserDataInputService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

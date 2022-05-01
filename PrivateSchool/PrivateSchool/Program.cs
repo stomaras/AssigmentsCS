@@ -118,14 +118,23 @@ namespace PrivateSchool
             int numOfCourses = -2;
             School school2 = new School(courseDetails, numOfCourses);
             school2.StartCourses();
-           
-            
 
 
 
+            /*****************************************************************/
+            /******************* UserDataInputService ************************/
+            /****************************************************************/
+
+            UserDataInputService userDataInputService = new UserDataInputService();
+            StudentDetails student = userDataInputService.StudentDetails;
+            int numberOfStudents = userDataInputService.NumOfStudents;
+            School school5 = new School(student, numberOfStudents);
+            school5.Start();
 
 
         }
+
+        
 
             
     }
