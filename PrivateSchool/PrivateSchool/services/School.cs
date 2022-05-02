@@ -51,7 +51,10 @@ namespace PrivateSchool.services
             set { _assigmentDetails = value; }
         }
 
-       
+        
+
+
+
 
 
 
@@ -86,19 +89,18 @@ namespace PrivateSchool.services
             NoOfTrainers = noOfTrainers;
         }
 
+        public School(StudentDetails studentDetails, int noOfStudents, CourseDetails courseDetails, int noOfCourses)
+        {
+            StudentDetails = studentDetails;
+            NoOfStudents = noOfStudents;
+            CourseDetails = courseDetails;
+            NoOfCourses = noOfCourses;
+        }
+
         public School(AssigmentDetails assigmentDetails)
         {
             _assigmentDetails = assigmentDetails;
         }
-
-
-
-
-
-
-
-
-
 
 
         private CourseDetails _courseDetails;
@@ -154,6 +156,7 @@ namespace PrivateSchool.services
             
         }
 
+       
         public void StartTrainers()
         {
             Console.WriteLine("---------------------List With Trainers -----------------------------------------");
@@ -214,5 +217,8 @@ namespace PrivateSchool.services
 
 
         }
+
+       
+
     }
 }

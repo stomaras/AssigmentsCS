@@ -102,6 +102,9 @@
     <Compile Include="services\RandomService.cs" />
     <Compile Include="services\StudentService.cs" />
     <Compile Include="services\StudentDataInputService.cs" />
+    <Compile Include="services\StudentsPerCourse\IStudentsPerCourseService.cs" />
+    <Compile Include="services\StudentsPerCourse\StudentsPerCourse.cs" />
+    <Compile Include="services\StudentsPerCourse\StudentsPerCourseService.cs" />
     <Compile Include="services\TrainerService.cs" />
     <Compile Include="services\UserDataInputService.cs" />
   </ItemGroup>
@@ -125,6 +128,7 @@
   <ItemGroup>
     <Folder Include="domain\Student\" />
     <Folder Include="domain\Trainer\" />
+    <Folder Include="services\TrainersPerCourse\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

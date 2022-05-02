@@ -7,6 +7,7 @@ using PrivateSchool.domain;
 using PrivateSchool.services;
 using PrivateSchool.domain.Assigments;
 using PrivateSchool.domain.Course;
+using PrivateSchool.services.StudentsPerCourse;
 namespace PrivateSchool
 {
     class Program
@@ -38,8 +39,8 @@ namespace PrivateSchool
 
             //Console.WriteLine(random.ToString());
 
+
             CSVDataInputService csvDataInputService = new CSVDataInputService(@"C:\Users\spyros\testPrivateSchool\AssigmentsCS\PrivateSchool\PrivateSchool\SchoolData.csv");
-            
             StudentDetails studentDetails = csvDataInputService.StudentDetails;
             int noOfStudents = csvDataInputService.NoOfStudents;
             School school = new School(studentDetails, noOfStudents);
@@ -52,6 +53,20 @@ namespace PrivateSchool
             Console.WriteLine(noOfCourses);
             School school4 = new School(courseDetails1, noOfCourses);
             school4.StartCourses();
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
             //TrainerDetails trainerDetails = csvDataInputService.TrainerDetails;
 
 
@@ -66,7 +81,15 @@ namespace PrivateSchool
 
             // List With Trainers 1st Way
 
-            MinMax Id = new MinMax(1, 20);
+            /*
+             * 
+             * 
+             * 
+             * 
+             * 
+             * 
+             * 
+             * MinMax Id = new MinMax(1, 20);
             NameMinMax FirstName = new NameMinMax(65, 91, 4);
             NameMinMax LastName = new NameMinMax(65, 91, 7);
             Subject subject = new Subject();
@@ -75,6 +98,15 @@ namespace PrivateSchool
             int noOfTrainers = 10;
             School school1 = new School(trainerDetails, noOfTrainers);
             school1.StartTrainers();
+             * 
+             * 
+             * 
+             * 
+             * 
+             * 
+             */
+
+
 
             //CSVDataInputService csvDataInputService = new CSVDataInputService(@"c:\users\spyros\assigmentscs\privateschool\privateschool\schooldata.csv");
 
@@ -84,11 +116,8 @@ namespace PrivateSchool
 
 
 
-            /*
-             * Assigment Details
-             * 
-             */
-
+            
+             
             MinMaxAssigment aid = new MinMaxAssigment(-5, 8);
             AssigmentTitle title = new AssigmentTitle();
             NameMinMax description = new NameMinMax(65, 91, 20);
@@ -118,14 +147,69 @@ namespace PrivateSchool
             int numOfCourses = -2;
             School school2 = new School(courseDetails, numOfCourses);
             school2.StartCourses();
+             
+
+
 
 
 
             /***************************************************************************************************************/
             /******************* *******************UserDataInputService *********************************************************************/
             /***********************************************************************************************************/
-            Console.WriteLine("--------------------------UserDataInputService--------------------------------------");
-            Menu();
+            //Console.WriteLine("--------------------------UserDataInputService--------------------------------------");
+            //Menu();
+
+            Console.WriteLine("-----------------------------------Students Per Course Question----------------------------------------");
+            IDictionary<int, int> studentsPerCourses = new Dictionary<int, int>();
+            int count = 8;
+            CourseMinMax courseMinMaxx = new CourseMinMax(300, 1);
+            CourseTitle courseTitlee = new CourseTitle();
+            StreamTypes streamTypess = new StreamTypes(1, 180);
+            CourseType courseTypee = new CourseType();
+            StartDateTime startDateTimee = new StartDateTime(3, 29);
+            EndDateTime endDateTimee = new EndDateTime(5, 222);
+            CourseDetails courseDetailss = new CourseDetails(courseMinMax, courseTitle, streamTypes, courseType, startDateTime, endDateTime);
+
+            MinMax Id = new MinMax(1, 100);
+            MinMax TuitionFees = new MinMax(900.00, 7900.00);
+            NameMinMax FirstName = new NameMinMax(65, 91, 4);
+            NameMinMax LastName = new NameMinMax(65, 91, 2);
+            DateBirth DateBirth = new DateBirth(1982, 2005, 3, 8, 5, 23);
+            StudentDetails studentDetailss = new StudentDetails(Id, FirstName, LastName, DateBirth, TuitionFees);
+
+            StudentsPerCourseService studentsPerCourseService = new StudentsPerCourseService(count);
+
+            StudentsPerCourse studentsPerCourse = new StudentsPerCourse(studentsPerCourseService, courseDetails, studentDetailss);
+            //Console.WriteLine(studentsPerCourseService.ToString());
+           
+            
+
+            /**
+             * 
+             * int noOfStudentss = 30;
+            MinMax Idd = new MinMax(1, 100);
+            MinMax TuitionFees = new MinMax(900.00, 7900.00);
+            NameMinMax FirstNamee = new NameMinMax(65, 91, 4);
+            NameMinMax LastNamee = new NameMinMax(65, 91, 6);
+            DateBirth DateBirth = new DateBirth(1982, 2005, 3, 8, 5, 23);
+            StudentDetails studentDetailss = new StudentDetails(Id, FirstName, LastName, DateBirth, TuitionFees);
+
+            int noOfCoursess = 8;
+            CourseMinMax courseMinMaxx = new CourseMinMax(300, 1);
+            CourseTitle courseTitlee = new CourseTitle();
+            StreamTypes streamTypess = new StreamTypes(1, 180);
+            CourseType courseTypee = new CourseType();
+            StartDateTime startDateTimee = new StartDateTime(3, 29);
+            EndDateTime endDateTimee = new EndDateTime(5, 222);
+            CourseDetails courseDetailss = new CourseDetails(courseMinMax, courseTitle, streamTypes, courseType, startDateTime, endDateTime);
+
+            School school56 = new School(studentDetailss, noOfStudentss, courseDetailss, noOfCourses);
+            school56.StartStudentsPerCourse();
+
+             * 
+             * 
+             */
+
         }
 
 
@@ -183,6 +267,8 @@ namespace PrivateSchool
             Console.WriteLine("3 to enter course list:\n");
             Console.WriteLine("4 to exit the program:\n");
         }
+
+       
             
     }
         
