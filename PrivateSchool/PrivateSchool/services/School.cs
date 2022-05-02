@@ -58,6 +58,14 @@ namespace PrivateSchool.services
         /*
          * School Constrcuctors Start Point
          */
+
+        public School(StudentDetails studentDetails, int noOfStudents, TrainerDetails trainerDetails, int noOfTrainers)
+        {
+            StudentDetails = studentDetails;
+            NoOfStudents = noOfStudents;
+            TrainerDetails = trainerDetails;
+            NoOfTrainers = noOfTrainers;
+        }
         public School(StudentDetails studentDetails, int noOfStudents)
         {
             StudentDetails = studentDetails;
@@ -181,6 +189,30 @@ namespace PrivateSchool.services
                 Console.WriteLine(course);
 
             }
+        }
+
+        public void UserDataInputServiceStart()
+        {
+            Console.WriteLine("--------------------- List With Students ----------------------------------");
+
+            StudentService studentService = new StudentService(_studentDetails, _noOfStudents);
+
+            foreach (RandomStudent student in studentService.Students)
+            {
+                Console.WriteLine(student);
+            }
+
+            Console.WriteLine("---------------------List With Trainers -----------------------------------------");
+
+            TrainerService trainerService = new TrainerService(_trainerDetails, _noOfTrainers);
+
+            foreach (RandomTrainer trainer in trainerService.Trainers)
+            {
+                Console.WriteLine(trainer);
+            }
+
+
+
         }
     }
 }

@@ -121,21 +121,68 @@ namespace PrivateSchool
 
 
 
-            /*****************************************************************/
-            /******************* UserDataInputService ************************/
-            /****************************************************************/
-
-            UserDataInputService userDataInputService = new UserDataInputService();
-            StudentDetails student = userDataInputService.StudentDetails;
-            int numberOfStudents = userDataInputService.NumOfStudents;
-            School school5 = new School(student, numberOfStudents);
-            school5.Start();
-
-
+            /***************************************************************************************************************/
+            /******************* *******************UserDataInputService *********************************************************************/
+            /***********************************************************************************************************/
+            Console.WriteLine("--------------------------UserDataInputService--------------------------------------");
+            Menu();
         }
 
-        
 
+        public static void Menu()
+        {
+            int printChoice = 0;
+            Options();
+            
+            while(printChoice != 4)
+            {
+                Console.WriteLine("Enter a number:\n");
+                printChoice = Convert.ToInt32(Console.ReadLine());
+                switch (printChoice)
+                {
+                    case 0:
+                        UserDataInputService userDataInputService = new UserDataInputService();
+                        StudentDetails student = userDataInputService.StudentDetails;
+                        int numberOfStudents = userDataInputService.NumOfStudents;
+                        School school5 = new School(student, numberOfStudents);
+                        school5.Start();
+                        break;
+                    case 1:
+                        UserDataInputService userDataInputService1 = new UserDataInputService();
+                        TrainerDetails trainer = userDataInputService1.TrainerDetails;
+                        int numberOfTrainerss = userDataInputService1.NumOfTrainers;
+                        School school64 = new School(trainer, numberOfTrainerss);
+                        school64.StartTrainers();
+                        break;
+                    case 2:
+                        UserDataInputService userDataInputService2 = new UserDataInputService();
+                        AssigmentDetails assigment = userDataInputService2.AssigmentDetails;
+                        School school65 = new School(assigment);
+                        school65.StartAssigments();
+                        break;
+                    case 3:
+                        UserDataInputService userDataInputService3 = new UserDataInputService();
+                        CourseDetails course = userDataInputService3.CourseDetails;
+                        int numOfCourses = userDataInputService3.NumOfCourses;
+                        School school66 = new School(course, numOfCourses);
+                        school66.StartCourses();
+                        break;
+                }
+                Options();
+                Console.WriteLine("Enter a number:\n");
+                printChoice = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+
+        public static void Options()
+        {
+            Console.WriteLine("Enter Options:\n");
+            Console.WriteLine("0 to enter student list:\n");
+            Console.WriteLine("1 to enter trainer list:\n");
+            Console.WriteLine("2 to enter assigment list:\n");
+            Console.WriteLine("3 to enter course list:\n");
+            Console.WriteLine("4 to exit the program:\n");
+        }
             
     }
         

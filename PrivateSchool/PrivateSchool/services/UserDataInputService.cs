@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PrivateSchool.domain;
+using PrivateSchool.domain.Assigments;
+using PrivateSchool.domain.Course;
 
 
 namespace PrivateSchool.services
@@ -28,9 +30,64 @@ namespace PrivateSchool.services
         }
 
 
+        private int _numOfTrainers;
+
+        public int NumOfTrainers
+        {
+            get { return _numOfTrainers; }
+            set { _numOfTrainers = value; }
+        }
+
+        private TrainerDetails _trainersDetails;
+
+        public TrainerDetails TrainerDetails
+        {
+            get { return _trainersDetails; }
+            set { _trainersDetails = value; }
+        }
+
+        private int _numOfAssigmetns;
+
+        public int NumOfAssigments
+        {
+            get { return _numOfAssigmetns; }
+            set { _numOfAssigmetns = value; }
+        }
+
+        private AssigmentDetails _assigmentDetails;
+
+        public AssigmentDetails AssigmentDetails
+        {
+            get { return _assigmentDetails; }
+            set { _assigmentDetails = value; }
+        }
+
+        private int _numOfCourses;
+
+        public int NumOfCourses
+        {
+            get { return _numOfCourses; }
+            set { _numOfCourses = value; }
+        }
+
+        private CourseDetails _courseDetails;
+
+        public CourseDetails CourseDetails
+        {
+            get { return _courseDetails; }
+            set { _courseDetails = value; }
+        }
+
+
+
+
+
+
+
 
         public UserDataInputService()
         {
+            Console.WriteLine("--------------------------UserDataInputService--------------------------");
             Menu();
         }
 
@@ -45,8 +102,25 @@ namespace PrivateSchool.services
                 switch (choice)
                 {
                     case 0:
+                        Console.WriteLine("----------------------------Student Details-------------------------------");
                         StudentDetails = EnterStudentDetails();
                         NumOfStudents = NumOfStudentss();
+                        break;
+                    case 1:
+                        Console.WriteLine("-------------------------Trainer Details---------------------------------");
+                        TrainerDetails = EnterTrainerDetails();
+                        NumOfTrainers = NumOfTrainerss();
+                        break;
+                    case 2:
+                        Console.WriteLine("-------------------------Assigment Details---------------------------------");
+                        AssigmentDetails = EnterAssigmentDetails();
+                        break;
+                    case 3:
+                        Console.WriteLine("----------------------Course Details-----------------------------------");
+                        CourseDetails = EnterCourseDetails();
+                        NumOfCourses = NumOfCoursess();
+                        break;
+                    case 4:
                         break;
                     default:
                         break;
@@ -74,6 +148,17 @@ namespace PrivateSchool.services
            
             StudentDetails studentDetails = EnterStudentDetails();
             
+            
+        }
+
+        public TrainerDetails EnterTrainerDetails()
+        {
+            MinMax tid = InitializeTrainerId();
+            NameMinMax firstName = InitializeTrainerFirstName();
+            NameMinMax lastName = InitializeTrainerLastName();
+            Subject subject = new Subject();
+            TrainerDetails trainerDetails = new TrainerDetails(tid, firstName, lastName, subject);
+            return trainerDetails;
         }
 
         public StudentDetails EnterStudentDetails()
@@ -88,11 +173,51 @@ namespace PrivateSchool.services
             return studentDetails;
         }
 
+        public AssigmentDetails EnterAssigmentDetails()
+        {
+            AssigmentDetailsInputService assigmentDetailsInputService = new AssigmentDetailsInputService();
+            MinMaxAssigment aid = assigmentDetailsInputService.Aid;
+            AssigmentTitle atitle = assigmentDetailsInputService.AssigmentTitle;
+            NameMinMax description = assigmentDetailsInputService.Description;
+            SubDateTime subDateTime = assigmentDetailsInputService.SubDateTime;
+            OralMark oralMark = assigmentDetailsInputService.OralMark;
+            TotalMark totalMark = assigmentDetailsInputService.TotalMark;
+            AssigmentDetails assigmentDetails = new AssigmentDetails(aid,atitle,description,subDateTime,oralMark,totalMark);
+            return assigmentDetails;
+        }
+
+        public CourseDetails EnterCourseDetails()
+        {
+            CourseDetailsInputService courseDetailsInputService = new CourseDetailsInputService();
+            CourseMinMax cid = courseDetailsInputService.CID;
+            CourseTitle ctitle = courseDetailsInputService.CourseTitle;
+            StreamTypes sTypes = courseDetailsInputService.StreamTypes;
+            CourseType cType = courseDetailsInputService.CourseType;
+            StartDateTime sDateTime = courseDetailsInputService.StartDateTime;
+            EndDateTime eDateTime = courseDetailsInputService.EndDateTime;
+            CourseDetails courseDetails = new CourseDetails(cid, ctitle, sTypes, cType, sDateTime, eDateTime);
+            return courseDetails;
+        }
+
         public int NumOfStudentss()
         {
             Console.WriteLine("Enter Number Of Students:\n");
             int numOfStudents = Convert.ToInt32(Console.ReadLine());
             return numOfStudents;
+        }
+
+        public int NumOfTrainerss()
+        {
+            Console.WriteLine("Enter Number Of Trainers:\n");
+            int numOfTrainers = Convert.ToInt32(Console.ReadLine());
+            return numOfTrainers;
+        }
+
+        public int NumOfCoursess()
+        {
+            Console.WriteLine("Enter Number Of Courses:\n");
+            int numOfCourses = Convert.ToInt32(Console.ReadLine());
+            return numOfCourses;
         }
         public MinMax InitializeStudentId()
         {
@@ -150,5 +275,47 @@ namespace PrivateSchool.services
             int maxDay = Convert.ToInt32(Console.ReadLine());
             return new DateBirth(minYearInCalendar, maxYearInCalendar, minMonth, maxMonth, minDay, maxDay);
         }
+
+        public MinMax InitializeTrainerId()
+        {
+            Console.WriteLine("Enter Trainer Min Id:\n");
+            int minId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Trainer Max Id:\n");
+            int maxId = Convert.ToInt32(Console.ReadLine());
+            return new MinMax(minId, maxId);
+        }
+
+        public NameMinMax InitializeTrainerFirstName()
+        {
+            Console.WriteLine("Enter min ascii trainer first name number:\n");
+            int minAscii = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter max ascii trainer first name number:\n");
+            int maxAscii = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter First Name number of chars:\n");
+            int firstNameNumOfChars = Convert.ToInt32(Console.ReadLine());
+            return new NameMinMax(minAscii, maxAscii, firstNameNumOfChars);
+        }
+
+        public NameMinMax InitializeTrainerLastName()
+        {
+            Console.WriteLine("Enter min ascii last name trainer number:\n");
+            int minAsciiLast = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter max ascii last name trainer number:\n");
+            int maxAsciiLast = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter last name trainer number of chars:\n");
+            int lastNameNumOfChars = Convert.ToInt32(Console.ReadLine());
+            return new NameMinMax(minAsciiLast, maxAsciiLast, lastNameNumOfChars);
+        }
+
+        public MinMaxAssigment InitializeAssigmentId()
+        {
+            Console.WriteLine("Enter Assigment Min Id:\n");
+            int minId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Assigment Max Id:\n");
+            int maxId = Convert.ToInt32(Console.ReadLine());
+            return new MinMaxAssigment(minId, maxId);
+        }
+
+        
     }
 }
