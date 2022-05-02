@@ -42,7 +42,7 @@ namespace PrivateSchool.services.StudentsPerCourse
             Values = NumberOfStudentsPerCourseInitializationValue(count);
             //PrintValues(Values);
             StudentsPerCoursee = InitializeStudentsPerCourse(Keys,Values);
-            PrintDictionary(StudentsPerCoursee);
+            //PrintDictionary(StudentsPerCoursee);
         }
 
         public void PrintKeys(List<int> keys)

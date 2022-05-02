@@ -36,7 +36,7 @@ namespace PrivateSchool.services.TrainersPerCourse
         {
             //Console.WriteLine(count);
             Keys = NumberOfCoursesInitializationKey(count);
-            PrintKeys(Keys);
+
             Values = NumberOfTrainersPerCourseInitializationValue(count);
             //PrintValues(Values);
             TrainersPerCoursee = InitializeTrainersPerCourse(Keys, Values);

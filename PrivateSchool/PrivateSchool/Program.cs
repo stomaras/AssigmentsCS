@@ -82,15 +82,7 @@ namespace PrivateSchool
 
             // List With Trainers 1st Way
 
-            /*
-             * 
-             * 
-             * 
-             * 
-             * 
-             * 
-             * 
-             * MinMax Id = new MinMax(1, 20);
+            MinMax Id = new MinMax(1, 20);
             NameMinMax FirstName = new NameMinMax(65, 91, 4);
             NameMinMax LastName = new NameMinMax(65, 91, 7);
             Subject subject = new Subject();
@@ -99,13 +91,7 @@ namespace PrivateSchool
             int noOfTrainers = 10;
             School school1 = new School(trainerDetails, noOfTrainers);
             school1.StartTrainers();
-             * 
-             * 
-             * 
-             * 
-             * 
-             * 
-             */
+             
 
 
 
@@ -148,7 +134,7 @@ namespace PrivateSchool
             int numOfCourses = -2;
             School school2 = new School(courseDetails, numOfCourses);
             school2.StartCourses();
-             
+
 
 
 
@@ -160,7 +146,8 @@ namespace PrivateSchool
             //Console.WriteLine("--------------------------UserDataInputService--------------------------------------");
             //Menu();
 
-            Console.WriteLine("-----------------------------------Students Per Course Question----------------------------------------");
+            Console.WriteLine("\n");
+            Console.WriteLine("------------------------------------------------------------Students Per Course Question-----------------------------------------------------------------------------");
             IDictionary<int, int> studentsPerCourses = new Dictionary<int, int>();
             int count = 8;
             CourseMinMax courseMinMaxx = new CourseMinMax(300, 1);
@@ -171,24 +158,25 @@ namespace PrivateSchool
             EndDateTime endDateTimee = new EndDateTime(5, 222);
             CourseDetails courseDetailss = new CourseDetails(courseMinMax, courseTitle, streamTypes, courseType, startDateTime, endDateTime);
 
-            MinMax Id = new MinMax(1, 100);
+            MinMax Idd = new MinMax(1, 100);
             MinMax TuitionFees = new MinMax(900.00, 7900.00);
-            NameMinMax FirstName = new NameMinMax(65, 91, 4);
-            NameMinMax LastName = new NameMinMax(65, 91, 2);
+            NameMinMax FirstNamee = new NameMinMax(65, 91, 4);
+            NameMinMax LastNamee = new NameMinMax(65, 91, 2);
             DateBirth DateBirth = new DateBirth(1982, 2005, 3, 8, 5, 23);
-            StudentDetails studentDetailss = new StudentDetails(Id, FirstName, LastName, DateBirth, TuitionFees);
+            StudentDetails studentDetailss = new StudentDetails(Idd, FirstNamee, LastNamee, DateBirth, TuitionFees);
 
             StudentsPerCourseService studentsPerCourseService = new StudentsPerCourseService(count);
             StudentsPerCourse studentsPerCourse = new StudentsPerCourse(studentsPerCourseService, courseDetails, studentDetailss);
             //Console.WriteLine(studentsPerCourseService.ToString());
-            Console.WriteLine("------------------------------------------Trainers Per Course Question--------------------------------------------");
+            Console.WriteLine("\n");
+            Console.WriteLine("-----------------------------------------------------------------Trainers Per Course Question-----------------------------------------------------------------------------------------");
             MinMax TId = new MinMax(1, 20);
             NameMinMax TFirstName = new NameMinMax(65, 91, 4);
             NameMinMax TLastName = new NameMinMax(65, 91, 7);
             Subject Tsubject = new Subject();
-            TrainerDetails trainerDetails = new TrainerDetails(TId, TFirstName, TLastName, Tsubject);
+            TrainerDetails trainerDetailss = new TrainerDetails(TId, TFirstName, TLastName, Tsubject);
             TrainersPerCourseService trainersPerCourseService = new TrainersPerCourseService(count);
-            TrainersPerCourse trainersPerCourse = new TrainersPerCourse(trainersPerCourseService, courseDetails, trainerDetails);
+            TrainersPerCourse trainersPerCourse = new TrainersPerCourse(trainersPerCourseService, courseDetails, trainerDetailss);
            
             
 
