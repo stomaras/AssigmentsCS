@@ -8,6 +8,7 @@ using PrivateSchool.services;
 using PrivateSchool.domain.Assigments;
 using PrivateSchool.domain.Course;
 using PrivateSchool.services.StudentsPerCourse;
+using PrivateSchool.services.TrainersPerCourse;
 namespace PrivateSchool
 {
     class Program
@@ -178,9 +179,16 @@ namespace PrivateSchool
             StudentDetails studentDetailss = new StudentDetails(Id, FirstName, LastName, DateBirth, TuitionFees);
 
             StudentsPerCourseService studentsPerCourseService = new StudentsPerCourseService(count);
-
             StudentsPerCourse studentsPerCourse = new StudentsPerCourse(studentsPerCourseService, courseDetails, studentDetailss);
             //Console.WriteLine(studentsPerCourseService.ToString());
+            Console.WriteLine("------------------------------------------Trainers Per Course Question--------------------------------------------");
+            MinMax TId = new MinMax(1, 20);
+            NameMinMax TFirstName = new NameMinMax(65, 91, 4);
+            NameMinMax TLastName = new NameMinMax(65, 91, 7);
+            Subject Tsubject = new Subject();
+            TrainerDetails trainerDetails = new TrainerDetails(TId, TFirstName, TLastName, Tsubject);
+            TrainersPerCourseService trainersPerCourseService = new TrainersPerCourseService(count);
+            TrainersPerCourse trainersPerCourse = new TrainersPerCourse(trainersPerCourseService, courseDetails, trainerDetails);
            
             
 

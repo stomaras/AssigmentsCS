@@ -101,7 +101,7 @@ namespace PrivateSchool.services.StudentsPerCourse
             List<int> values = new List<int>();
             for (int i = 0; i <= count - 1; i++)
             {
-                int studentsNum = _rand.Next(5, 30);
+                int studentsNum = _rand.Next(1, 40);
                 values.Add(studentsNum);
             }
             return values;
