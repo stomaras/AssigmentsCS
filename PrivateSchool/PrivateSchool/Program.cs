@@ -9,7 +9,9 @@ using PrivateSchool.domain.Assigments;
 using PrivateSchool.domain.Course;
 using PrivateSchool.services.StudentsPerCourse;
 using PrivateSchool.services.TrainersPerCourse;
+using PrivateSchool.services.AssigmentsPerCourse;
 namespace PrivateSchool
+
 {
     class Program
     {
@@ -177,8 +179,10 @@ namespace PrivateSchool
             TrainerDetails trainerDetailss = new TrainerDetails(TId, TFirstName, TLastName, Tsubject);
             TrainersPerCourseService trainersPerCourseService = new TrainersPerCourseService(count);
             TrainersPerCourse trainersPerCourse = new TrainersPerCourse(trainersPerCourseService, courseDetails, trainerDetailss);
-           
-            
+            Console.WriteLine("\n");
+            Console.WriteLine("-----------------------------------------------------------------------Assigments Per Course Question------------------------------------------------------------------------------------------");
+            AssigmentsPerCourseService assigmentsPerCourseService = new AssigmentsPerCourseService(count);
+            AssigmentsPerCourse assigmentsPerCourse = new AssigmentsPerCourse(assigmentsPerCourseService, courseDetails, assigmentDetails);
 
             /**
              * 
