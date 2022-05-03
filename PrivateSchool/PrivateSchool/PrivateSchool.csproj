@@ -97,6 +97,9 @@
     <Compile Include="services\AssigmentsPerCourse\AssigmentsPerCourse.cs" />
     <Compile Include="services\AssigmentsPerCourse\AssigmentsPerCourseService.cs" />
     <Compile Include="services\AssigmentsPerCourse\IAssigmentsPerCourseService.cs" />
+    <Compile Include="services\AssigmentsPerStudent\AssigmentPerStudentService.cs" />
+    <Compile Include="services\AssigmentsPerStudent\AssigmentsPerStudent.cs" />
+    <Compile Include="services\AssigmentsPerStudent\IAssigmentPerStudentService.cs" />
     <Compile Include="services\CourseDetailsInputService.cs" />
     <Compile Include="services\CourseService.cs" />
     <Compile Include="services\CSVDataInputService.cs" />
@@ -134,7 +137,6 @@
   <ItemGroup>
     <Folder Include="domain\Student\" />
     <Folder Include="domain\Trainer\" />
-    <Folder Include="services\AssigmentsPerStudent\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

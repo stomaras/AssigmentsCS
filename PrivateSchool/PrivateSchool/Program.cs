@@ -10,6 +10,7 @@ using PrivateSchool.domain.Course;
 using PrivateSchool.services.StudentsPerCourse;
 using PrivateSchool.services.TrainersPerCourse;
 using PrivateSchool.services.AssigmentsPerCourse;
+using PrivateSchool.services.AssigmentsPerStudent;
 namespace PrivateSchool
 
 {
@@ -183,7 +184,11 @@ namespace PrivateSchool
             Console.WriteLine("-----------------------------------------------------------------------Assigments Per Course Question------------------------------------------------------------------------------------------");
             AssigmentsPerCourseService assigmentsPerCourseService = new AssigmentsPerCourseService(count);
             AssigmentsPerCourse assigmentsPerCourse = new AssigmentsPerCourse(assigmentsPerCourseService, courseDetails, assigmentDetails);
-
+            Console.WriteLine("---------------------------------------------------------------------Assigments Per Student Question------------------------------------------------------");
+            int noOfStudentsss = 100;
+            AssigmentPerStudentService assigmentsPerStudentService = new AssigmentPerStudentService(noOfStudentsss);
+            AssigmentsPerStudent assigmentsPerStudent = new AssigmentsPerStudent(assigmentsPerStudentService, studentDetailss, assigmentDetails);
+            
             /**
              * 
              * int noOfStudentss = 30;
