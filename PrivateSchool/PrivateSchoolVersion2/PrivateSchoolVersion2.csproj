@@ -49,5 +49,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="domain\Assigments\" />
+    <Folder Include="domain\Courses\" />
+    <Folder Include="domain\Students\" />
+    <Folder Include="domain\Trainers\" />
+    <Folder Include="services\InputService\CSVDataInputService\" />
+    <Folder Include="services\InputService\UserDataInputService\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
